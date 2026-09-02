@@ -20,11 +20,11 @@ const timelines = ['As soon as possible', 'Within 30 days', '1–3 months', '3+ 
 const budgets = ['Under $5,000', '$5,000–$10,000', '$10,000–$20,000', '$20,000+', 'Not sure yet'];
 
 const services = [
-  { title: 'Concrete Driveways', desc: 'A clean, durable driveway designed to improve everyday access and curb appeal.', image: 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=900&q=80' },
-  { title: 'Concrete Patios', desc: 'Comfortable outdoor living space shaped around your home and how you use it.', image: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=80' },
-  { title: 'Concrete Sidewalks', desc: 'Smooth, practical walkways that help make your property safer and easier to navigate.', image: 'https://images.unsplash.com/photo-1531835551805-16d864c8d311?auto=format&fit=crop&w=900&q=80' },
-  { title: 'Stamped Concrete', desc: 'Decorative texture and color that gives patios and paths a custom finished look.', image: 'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=80' },
-  { title: 'Concrete Slabs', desc: 'Dependable concrete foundations for sheds, workshops, additions, and more.', image: 'https://images.unsplash.com/photo-1513467535987-fd81bc7d62f8?auto=format&fit=crop&w=900&q=80' },
+  { title: 'Concrete Driveways', desc: 'A durable, clean-finished driveway built to handle Texas weather and sharpen your home’s curb appeal.', image: '/images/residential-driveway.webp' },
+  { title: 'Concrete Patios', desc: 'A comfortable backyard foundation for grilling, gathering, and making more use of your outdoor space.', image: '/images/residential-patio.webp' },
+  { title: 'Concrete Sidewalks', desc: 'Smooth, practical walkways that create a safer, better-looking path around your home.', image: '/images/residential-walkway.webp' },
+  { title: 'Stamped Concrete', desc: 'Decorative color and texture that gives residential patios and paths a custom, finished look.', image: '/images/residential-stamped-concrete.webp' },
+  { title: 'Concrete Slabs', desc: 'Dependable residential foundations for backyard sheds, workshops, additions, and more.', image: '/images/residential-concrete-slab.webp' },
 ];
 
 export default function Home() {
@@ -54,7 +54,7 @@ export default function Home() {
   return (
     <main>
       <header className="topbar">
-        <a className="brand" href="#top" aria-label="Fort Worth Concrete home"><Image className="brand-logo" src="/fort-worth-concrete-logo.webp" width={225} height={150} priority alt="Fort Worth Concrete" /></a>
+        <a className="brand" href="#top" aria-label="Fort Worth Concrete home"><Image className="brand-logo" src="/fort-worth-concrete-logo-tight.webp" width={152} height={148} priority alt="Fort Worth Concrete" /></a>
         <div className="header-actions"><span className="header-note">Free estimates · Fort Worth, TX</span><a className="phone-link" href={`tel:${PHONE_HREF}`}>Call {PHONE_DISPLAY}</a></div>
       </header>
 
@@ -64,7 +64,7 @@ export default function Home() {
           <div className="hero-copy">
             <span className="eyebrow">Local concrete service · Fort Worth, Texas</span>
             <h1>Concrete installation you can count on.</h1>
-            <p className="hero-sub">Driveways, patios, sidewalks, stamped concrete and more—built with care for homes and businesses across Fort Worth.</p>
+            <p className="hero-sub">Driveways, patios, sidewalks, stamped concrete and slabs—built with care for Fort Worth homeowners.</p>
             <div className="offer"><strong>10% OFF</strong><span>Your concrete project</span></div>
             <ul className="trust-list"><li>Free, no-pressure estimates</li><li>Experienced concrete crews</li><li>Clear communication</li></ul>
           </div>
@@ -88,11 +88,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="proof-strip"><div className="wrap proof-grid"><span><b>FREE</b> estimates</span><span><b>LOCAL</b> Fort Worth service</span><span><b>CLEAR</b> project communication</span><span><b>10% OFF</b> current offer</span></div></section>
+      <section className="proof-strip"><div className="wrap proof-grid"><span><b>FREE</b> estimates</span><span><b>LOCAL</b> Fort Worth crews</span><span><b>RESIDENTIAL</b> concrete specialists</span><span><b>10% OFF</b> current offer</span></div></section>
 
       <section className="section services"><div className="wrap"><div className="section-heading"><div><span className="eyebrow dark">Concrete services in Fort Worth</span><h2>Built for the way you use your property.</h2></div>{quoteLink('Request a Quote')}</div><div className="service-grid">{services.map((service)=><article className="service-card" key={service.title}><Image src={service.image} alt={`${service.title} example`} width={900} height={600} unoptimized loading="lazy" /><div><h3>{service.title}</h3><p>{service.desc}</p><a href="#quote">Get a free estimate <span>→</span></a></div></article>)}</div></div></section>
 
-      <section className="section why"><div className="wrap why-grid"><div className="why-photo" role="img" aria-label="Concrete construction crew at work"><div className="photo-badge"><b>Fort Worth focused</b><span>Residential & commercial concrete</span></div></div><div><span className="eyebrow dark">Why choose us</span><h2>A straightforward concrete experience.</h2><p className="section-intro">From your first estimate through the final walkthrough, the focus stays on dependable service, clean work, and communication you can follow.</p><div className="benefit-grid">{['Free Estimates','Quality Workmanship','Local Fort Worth Service','Residential & Commercial','Clear Communication','Reliable Scheduling'].map((item,i)=><div className="benefit" key={item}><span>{['$','✓','⌖','⌂','↔','◷'][i]}</span><b>{item}</b></div>)}</div>{quoteLink('Get My Free Estimate')}</div></div></section>
+      <section className="section why"><div className="wrap why-grid"><div className="why-photo" role="img" aria-label="Residential concrete crew finishing a backyard slab"><div className="photo-badge"><b>Fort Worth focused</b><span>Concrete built for your home</span></div></div><div><span className="eyebrow dark">Why choose us</span><h2>Solid work. Straight answers.</h2><p className="section-intro">From your first estimate through the final walkthrough, the focus stays on dependable service, a clean residential worksite, and communication you can follow.</p><div className="benefit-grid">{['Free Estimates','Quality Workmanship','Local Fort Worth Service','Residential Specialists','Clear Communication','Reliable Scheduling'].map((item,i)=><div className="benefit" key={item}><span>{['$','✓','⌖','⌂','↔','◷'][i]}</span><b>{item}</b></div>)}</div>{quoteLink('Get My Free Estimate')}</div></div></section>
 
       <section className="section reviews"><div className="wrap"><div className="center-heading"><span className="eyebrow dark">Customer feedback</span><h2>Trusted by Fort Worth homeowners</h2><p>Approved customer reviews will be added here.</p></div><div className="review-grid">{[1,2,3].map((n)=><article className="review-card placeholder" key={n}><div className="stars" aria-label="Rating placeholder">☆ ☆ ☆ ☆ ☆</div><p>[Approved customer review text will appear here.]</p><div className="reviewer"><span>{n}</span><div><b>[Reviewer name]</b><small>Verified review placeholder</small></div></div></article>)}</div><p className="review-note">These are clearly marked layout placeholders—not customer testimonials.</p></div></section>
 
@@ -100,7 +100,7 @@ export default function Home() {
 
       <section className="final-cta"><div className="wrap"><span className="eyebrow">Ready to get started?</span><h2>Let&apos;s talk about your concrete project.</h2><p>Request a free estimate today and save 10% with our current offer.</p><div className="cta-row">{quoteLink('Get My Free Estimate')}<a className="button secondary" href={`tel:${PHONE_HREF}`}>Call Now · {PHONE_DISPLAY}</a></div></div></section>
 
-      <footer><div className="wrap footer-grid"><a className="brand footer-brand" href="#top"><Image className="brand-logo footer-logo" src="/fort-worth-concrete-logo.webp" width={225} height={150} alt="Fort Worth Concrete" /></a><p>Concrete installation for Fort Worth homes and businesses.</p><div className="social-links"><a href={FACEBOOK_URL} aria-label="Facebook">f</a><a href={INSTAGRAM_URL} aria-label="Instagram">◎</a></div><a className="footer-phone" href={`tel:${PHONE_HREF}`}>{PHONE_DISPLAY}</a></div><div className="wrap footer-bottom"><span>© {new Date().getFullYear()} Fort Worth Concrete</span><span>Facebook and Instagram links are ready for your URLs.</span></div></footer>
+      <footer><div className="wrap footer-grid"><a className="brand footer-brand" href="#top"><Image className="brand-logo footer-logo" src="/fort-worth-concrete-logo-tight.webp" width={152} height={148} alt="Fort Worth Concrete" /></a><p>Concrete installation for Fort Worth homes and residential properties.</p><div className="social-links"><a href={FACEBOOK_URL} aria-label="Facebook">f</a><a href={INSTAGRAM_URL} aria-label="Instagram">◎</a></div><a className="footer-phone" href={`tel:${PHONE_HREF}`}>{PHONE_DISPLAY}</a></div><div className="wrap footer-bottom"><span>© {new Date().getFullYear()} Fort Worth Concrete</span><span>Facebook and Instagram links are ready for your URLs.</span></div></footer>
 
       <div className="mobile-sticky"><a href={`tel:${PHONE_HREF}`}>Call Now</a><a href="#quote">Free Quote</a></div>
     </main>

@@ -13,3 +13,63 @@
 :root{--ink:#171d21;--forest:#102b4e;--forest2:#091c33;--orange:#f47c20;--orange2:#d85f0c;--red:#c52435;--cream:#f7f4ed;--muted:#667078;--line:#d9e0e5}
 .topbar{height:82px}.brand{display:flex;align-items:center}.brand-logo{display:block;width:126px;height:76px;object-fit:contain}.brand-mark,.brand>span:not(.brand-logo){display:none}.ui-progress{height:5px;background:#edf0ee;border-radius:99px;overflow:hidden;margin-bottom:18px}.ui-progress span{display:block;height:100%;background:linear-gradient(90deg,var(--orange),var(--red));transition:width .25s ease}.step-label{color:var(--red)}.lead-card form>p{color:var(--muted);margin:0 0 20px;line-height:1.45}.primary-button{background:linear-gradient(135deg,var(--orange),#ee6616)}.ui-button:focus-visible,.ui-input:focus-visible,.ui-textarea:focus-visible,.choice input:focus-visible+span{outline:3px solid rgba(16,43,78,.28);outline-offset:2px}.hero-shade{background:linear-gradient(90deg,rgba(7,23,42,.96),rgba(7,23,42,.8) 55%,rgba(7,23,42,.4))}.final-cta{background:linear-gradient(rgba(9,28,51,.92),rgba(9,28,51,.92)),url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=80') center/cover}footer{background:#08182b;color:#c8d2dc}.footer-brand{width:max-content;background:#fff;border-radius:10px;padding:4px 10px}.footer-logo{width:120px;height:72px}.checkmark{background:linear-gradient(135deg,var(--forest),var(--red))}
 @media(max-width:600px){.topbar{height:70px}.brand-logo{width:96px;height:62px}.footer-logo{width:116px;height:70px}.thanks-page .brand{display:flex}}
+
+/* Residential portfolio redesign */
+:root{--ink:#18212a;--forest:#0c294a;--forest2:#071b31;--orange:#f47b20;--orange2:#d95d0c;--red:#c52235;--cream:#f7f2e9;--muted:#5f6a74;--line:#d8dee3}
+body{font-family:var(--font-archivo),Arial,sans-serif;background:#fff;color:var(--ink)}
+h1,h2,h3,.eyebrow,.button,.phone-link,.offer,.proof-grid,.step-label,.primary-button,.back-button{font-family:var(--font-barlow-condensed),Impact,sans-serif}
+h1,.section h2,.area h2,.final-cta h2,.thanks-content h1{font-weight:900;letter-spacing:-.035em}
+.topbar{height:116px;border-top:7px solid var(--orange);padding-top:0;box-shadow:0 8px 30px rgba(7,27,49,.1)}
+.brand-logo{width:118px;height:105px}
+.header-note{color:var(--forest);font-weight:800}
+.phone-link{font-size:18px;font-weight:900;color:#fff;background:var(--red);border:0;border-radius:5px;padding:13px 20px;box-shadow:4px 4px 0 var(--forest);letter-spacing:.02em;text-transform:uppercase}
+.phone-link:hover{background:#a91d2d;transform:translateY(-1px)}
+.hero{min-height:740px;background-image:url('/images/residential-driveway-hero.webp');background-position:center;background-size:cover}
+.hero-shade{background:linear-gradient(90deg,rgba(6,22,40,.97) 0%,rgba(8,30,54,.91) 38%,rgba(8,30,54,.5) 67%,rgba(8,30,54,.16) 100%)}
+.hero-grid{min-height:740px;grid-template-columns:1fr .78fr;gap:74px}
+.hero-copy{border-left:8px solid var(--orange);padding-left:28px}
+.eyebrow{font-size:15px;font-weight:800;letter-spacing:.12em;color:#ffab62;margin-bottom:14px}
+h1{font-size:clamp(58px,6vw,88px);line-height:.88;text-transform:uppercase;text-shadow:0 4px 24px rgba(0,0,0,.28)}
+.hero-sub{font-size:18px;font-weight:600;max-width:575px;color:#f0f4f7}
+.offer{border-radius:5px;padding:7px 18px 7px 7px;border:3px solid #fff;box-shadow:6px 6px 0 rgba(244,123,32,.38);text-transform:uppercase;letter-spacing:.03em}
+.offer strong{font-family:var(--font-barlow-condensed);font-size:25px;border-radius:2px;background:var(--red);padding:8px 13px}
+.offer span{font-weight:900}
+.trust-list{font-weight:700}
+.trust-list li:before{color:var(--orange);font-size:18px}
+.lead-card{border-radius:8px;border-top:8px solid var(--orange);box-shadow:12px 14px 0 rgba(7,27,49,.26),0 28px 70px rgba(0,0,0,.28)}
+.lead-card h2{font-family:var(--font-barlow-condensed);font-size:35px;font-weight:900;text-transform:uppercase;letter-spacing:-.02em}
+.primary-button,.button{border-radius:4px;text-transform:uppercase;letter-spacing:.045em;font-size:17px;font-weight:900}
+.primary-button,.button.primary{background:linear-gradient(135deg,var(--orange),#ed6815);box-shadow:4px 4px 0 var(--red)}
+.primary-button:hover,.button.primary:hover{background:var(--red)}
+.proof-strip{background:var(--forest);border-top:6px solid var(--orange);border-bottom:6px solid var(--red)}
+.proof-grid span{font-size:16px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;padding:23px 10px}
+.proof-grid b{color:#ff9e50;font-size:19px}
+.section{padding:105px 0}
+.section-heading{border-left:7px solid var(--orange);padding-left:22px}
+.section h2,.area h2,.final-cta h2{font-size:clamp(45px,4.8vw,66px);text-transform:uppercase;line-height:.9}
+.service-grid{gap:22px}
+.service-card{border:2px solid var(--forest);border-radius:6px;box-shadow:8px 8px 0 #dce3e8;transition:transform .2s ease,box-shadow .2s ease}
+.service-card:hover{transform:translateY(-5px);box-shadow:10px 14px 0 rgba(244,123,32,.25)}
+.service-card img{height:235px}
+.service-card>div{padding:24px;border-top:6px solid var(--orange)}
+.service-card h3{font-family:var(--font-barlow-condensed);font-size:29px;font-weight:900;text-transform:uppercase;letter-spacing:0;color:var(--forest)}
+.service-card p{font-size:14px;line-height:1.65}
+.service-card a{font-family:var(--font-barlow-condensed);font-size:17px;text-transform:uppercase;color:var(--red)}
+.why{background:linear-gradient(120deg,#f8f3ea,#eef2f5)}
+.why-photo{height:600px;border-radius:6px;background-image:url('/images/residential-concrete-slab.webp');background-position:center;background-size:cover;border:5px solid #fff;box-shadow:-12px 12px 0 var(--orange),0 24px 55px rgba(7,27,49,.2)}
+.photo-badge{border-radius:3px;border-left:7px solid var(--red);box-shadow:0 8px 25px rgba(7,27,49,.2)}
+.photo-badge b{font-family:var(--font-barlow-condensed);font-size:21px;text-transform:uppercase;color:var(--forest)}
+.benefit{border-radius:3px;border:1px solid #d2d9de;box-shadow:3px 3px 0 #e1e6e9}
+.benefit span{border-radius:2px;background:#fff0e3;color:var(--red)}
+.reviews{border-top:9px solid var(--orange)}
+.review-card{border-radius:4px}
+.area{background:linear-gradient(135deg,var(--forest2),var(--forest));border-top:9px solid var(--red)}
+.area-card{border-radius:5px;border-bottom:8px solid var(--orange);box-shadow:10px 10px 0 rgba(197,34,53,.75)}
+.final-cta{background-image:linear-gradient(90deg,rgba(7,27,49,.95),rgba(7,27,49,.82)),url('/images/residential-patio.webp');background-position:center;background-size:cover;border-top:9px solid var(--orange)}
+footer{border-top:7px solid var(--red)}
+.footer-brand{border-radius:4px;padding:5px 14px}
+.footer-logo{width:122px;height:112px}
+.mobile-sticky a{font-family:var(--font-barlow-condensed);font-size:18px;text-transform:uppercase;letter-spacing:.04em}
+.mobile-sticky a:last-child{background:linear-gradient(135deg,var(--orange),var(--red))}
+@media(max-width:920px){.hero-grid{grid-template-columns:1fr;gap:42px}.hero-shade{background:linear-gradient(rgba(7,27,49,.92),rgba(7,27,49,.82))}.hero-copy{max-width:720px}}
+@media(max-width:600px){.topbar{height:88px;border-top-width:5px}.brand-logo{width:84px;height:78px}.phone-link{font-size:14px;padding:10px 11px;box-shadow:3px 3px 0 var(--forest)}.hero{background-position:62% center}.hero-grid{padding:52px 0 72px}.hero-copy{border-left-width:5px;padding-left:17px}.hero-copy h1{font-size:50px;line-height:.89}.hero-sub{font-size:16px}.lead-card{box-shadow:7px 8px 0 rgba(7,27,49,.3)}.proof-grid span{font-size:12px;padding:17px 5px}.proof-grid b{font-size:14px}.section{padding:78px 0}.service-card img{height:225px}.why-photo{height:405px;box-shadow:-7px 8px 0 var(--orange)}.footer-logo{width:106px;height:100px}}

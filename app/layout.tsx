@@ -1,15 +1,16 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Archivo, Barlow_Condensed } from 'next/font/google';
 import './globals.css';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const archivo = Archivo({
+  variable: '--font-archivo',
   subsets: ['latin'],
 });
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
+const barlowCondensed = Barlow_Condensed({
+  variable: '--font-barlow-condensed',
   subsets: ['latin'],
+  weight: ['600', '700', '800', '900'],
 });
 
 export const metadata: Metadata = {
@@ -17,8 +18,8 @@ export const metadata: Metadata = {
   title: 'Fort Worth Concrete | Free Concrete Estimates',
   description: 'Concrete driveways, patios, sidewalks, stamped concrete and slabs in Fort Worth, Texas. Request your free estimate today.',
   icons: {
-    icon: '/fort-worth-concrete-logo.webp',
-    apple: '/fort-worth-concrete-logo.webp',
+    icon: '/fort-worth-concrete-logo-tight.webp',
+    apple: '/fort-worth-concrete-logo-tight.webp',
   },
   openGraph: {
     title: 'Fort Worth Concrete | Installation You Can Count On',
@@ -42,7 +43,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${archivo.variable} ${barlowCondensed.variable} antialiased`}
       >
         {children}
       </body>
