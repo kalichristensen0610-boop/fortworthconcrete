@@ -13,6 +13,7 @@
     "next:start": "next start",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next"
   },
+  "packageManager": "pnpm@11.10.0",
   "dependencies": {
     "next": "16.2.6",
     "react": "19.2.6",
