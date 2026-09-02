@@ -16,21 +16,21 @@ const barlowCondensed = Barlow_Condensed({
 export const metadata: Metadata = {
   metadataBase: new URL('https://fort-worth-concrete.tkyy67t28j.chatgpt.site'),
   title: 'Fort Worth Concrete | Free Concrete Estimates',
-  description: 'Concrete driveways, patios, sidewalks, stamped concrete and slabs in Fort Worth, Texas. Request your free estimate today.',
+  description: 'Residential concrete driveways, patios, sidewalks, stamped concrete and slabs in Fort Worth, Dallas and surrounding DFW communities.',
   icons: {
     icon: '/fort-worth-concrete-logo-tight.webp',
     apple: '/fort-worth-concrete-logo-tight.webp',
   },
   openGraph: {
     title: 'Fort Worth Concrete | Installation You Can Count On',
-    description: 'Request a free estimate for concrete driveways, patios, sidewalks, stamped concrete, and slabs in Fort Worth, Texas.',
+    description: 'Get a free estimate for residential concrete projects in Fort Worth, Dallas and surrounding DFW communities.',
     images: [{ url: '/og.png', width: 1200, height: 630, alt: 'Fort Worth Concrete' }],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Fort Worth Concrete | Installation You Can Count On',
-    description: 'Request a free concrete estimate in Fort Worth, Texas.',
+    description: 'Get a free concrete estimate in Fort Worth, Dallas and surrounding DFW communities.',
     images: ['/og.png'],
   },
 };
