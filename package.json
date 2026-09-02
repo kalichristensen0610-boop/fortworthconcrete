@@ -9,8 +9,11 @@
     "dev": "vinext dev",
     "build": "vinext build",
     "start": "vinext start",
+    "next:build": "next build",
+    "next:start": "next start",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next"
   },
+  "packageManager": "pnpm@11.19.0",
   "dependencies": {
     "next": "16.2.6",
     "react": "19.2.6",

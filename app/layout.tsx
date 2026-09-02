@@ -13,8 +13,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://fort-worth-concrete.tkyy67t28j.chatgpt.site'),
   title: 'Fort Worth Concrete | Free Concrete Estimates',
   description: 'Concrete driveways, patios, sidewalks, stamped concrete and slabs in Fort Worth, Texas. Request your free estimate today.',
+  icons: {
+    icon: '/fort-worth-concrete-logo.webp',
+    apple: '/fort-worth-concrete-logo.webp',
+  },
   openGraph: {
     title: 'Fort Worth Concrete | Installation You Can Count On',
     description: 'Request a free estimate for concrete driveways, patios, sidewalks, stamped concrete, and slabs in Fort Worth, Texas.',

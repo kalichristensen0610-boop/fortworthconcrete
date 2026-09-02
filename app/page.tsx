@@ -1,6 +1,14 @@
 'use client';
 
 import { FormEvent, useState } from 'react';
+import Image from 'next/image';
+import { Button } from '@/components/ui/button';
+import { Card } from '@/components/ui/card';
+import { FieldError, FieldLabel } from '@/components/ui/field';
+import { Input } from '@/components/ui/input';
+import { Progress } from '@/components/ui/progress';
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
+import { Textarea } from '@/components/ui/textarea';
 
 const PHONE_DISPLAY = '(817) 555-0198'; // Replace with the client's phone number.
 const PHONE_HREF = '+18175550198';
@@ -46,7 +54,7 @@ export default function Home() {
   return (
     <main>
       <header className="topbar">
-        <a className="brand" href="#top" aria-label="Fort Worth Concrete home"><span className="brand-mark">FW</span><span>FORT WORTH <b>CONCRETE</b></span></a>
+        <a className="brand" href="#top" aria-label="Fort Worth Concrete home"><Image className="brand-logo" src="/fort-worth-concrete-logo.webp" width={225} height={150} priority alt="Fort Worth Concrete" /></a>
         <div className="header-actions"><span className="header-note">Free estimates · Fort Worth, TX</span><a className="phone-link" href={`tel:${PHONE_HREF}`}>Call {PHONE_DISPLAY}</a></div>
       </header>
 
@@ -61,28 +69,28 @@ export default function Home() {
             <ul className="trust-list"><li>Free, no-pressure estimates</li><li>Experienced concrete crews</li><li>Clear communication</li></ul>
           </div>
 
-          <form className="lead-card" id="quote" onSubmit={submit} noValidate>
-            <div className="progress"><span style={{ width: `${step * 25}%` }} /></div>
+          <Card className="lead-card"><form id="quote" onSubmit={submit} noValidate>
+            <Progress value={step * 25} />
             <div className="step-label">Step {step} of 4</div>
             {step === 1 && <><h2>Let&apos;s get you a free estimate</h2><p>Start with your contact information. It only takes a minute.</p><div className="field-grid">
-              <label>First name<input value={form.firstName} onChange={e=>update('firstName',e.target.value)} required autoComplete="given-name" placeholder="First name" /></label>
-              <label>Last name<input value={form.lastName} onChange={e=>update('lastName',e.target.value)} required autoComplete="family-name" placeholder="Last name" /></label>
-              <label className="wide">Email<input value={form.email} onChange={e=>update('email',e.target.value)} required type="email" autoComplete="email" placeholder="you@example.com" /></label>
-              <label className="wide">Phone number<input value={form.phone} onChange={e=>update('phone',e.target.value)} required type="tel" inputMode="tel" autoComplete="tel" placeholder="(817) 555-0123" /></label>
+              <FieldLabel>First name<Input value={form.firstName} onChange={e=>update('firstName',e.target.value)} required autoComplete="given-name" placeholder="First name" /></FieldLabel>
+              <FieldLabel>Last name<Input value={form.lastName} onChange={e=>update('lastName',e.target.value)} required autoComplete="family-name" placeholder="Last name" /></FieldLabel>
+              <FieldLabel className="wide">Email<Input value={form.email} onChange={e=>update('email',e.target.value)} required type="email" autoComplete="email" placeholder="you@example.com" /></FieldLabel>
+              <FieldLabel className="wide">Phone number<Input value={form.phone} onChange={e=>update('phone',e.target.value)} required type="tel" inputMode="tel" autoComplete="tel" placeholder="(817) 555-0123" /></FieldLabel>
             </div></>}
             {step === 2 && <><h2>Tell us about the project</h2><Choice title="Is this a residential or commercial property?" name="property" options={['Residential','Commercial']} value={form.property} onChange={v=>update('property',v)} /><Choice title="What type of concrete project are you interested in?" name="project" options={projects} value={form.project} onChange={v=>update('project',v)} /></>}
             {step === 3 && <><h2>What&apos;s your project timing?</h2><Choice title="When are you looking to get this project done?" name="timeline" options={timelines} value={form.timeline} onChange={v=>update('timeline',v)} /><Choice title="Have you considered a budget for the project?" name="budget" options={budgets} value={form.budget} onChange={v=>update('budget',v)} /></>}
-            {step === 4 && <><h2>One last thing</h2><p>Tell us anything else we should know about your project.</p><label className="textarea-label">Project details<textarea value={form.details} onChange={e=>update('details',e.target.value)} rows={6} placeholder="Approximate size, project location, special finish, access notes…" /></label></>}
-            {error && <p className="form-error" role="alert">{error}</p>}
-            <div className="form-buttons">{step > 1 && <button className="back-button" type="button" onClick={()=>{setError('');setStep(step-1)}}>Back</button>}<button className="primary-button" type={step===4?'submit':'button'} onClick={step===4?undefined:nextStep}>{step===4?'Get My Free Estimate':'Next'} <span>→</span></button></div>
+            {step === 4 && <><h2>One last thing</h2><p>Tell us anything else we should know about your project.</p><FieldLabel className="textarea-label">Project details<Textarea value={form.details} onChange={e=>update('details',e.target.value)} rows={6} placeholder="Approximate size, project location, special finish, access notes…" /></FieldLabel></>}
+            <FieldError>{error}</FieldError>
+            <div className="form-buttons">{step > 1 && <Button className="back-button" variant="secondary" type="button" onClick={()=>{setError('');setStep(step-1)}}>Back</Button>}<Button className="primary-button" type={step===4?'submit':'button'} onClick={step===4?undefined:nextStep}>{step===4?'Get My Free Estimate':'Next'} <span>→</span></Button></div>
             <small>By submitting, you agree to be contacted about your estimate. No spam.</small>
-          </form>
+          </form></Card>
         </div>
       </section>
 
       <section className="proof-strip"><div className="wrap proof-grid"><span><b>FREE</b> estimates</span><span><b>LOCAL</b> Fort Worth service</span><span><b>CLEAR</b> project communication</span><span><b>10% OFF</b> current offer</span></div></section>
 
-      <section className="section services"><div className="wrap"><div className="section-heading"><div><span className="eyebrow dark">Concrete services in Fort Worth</span><h2>Built for the way you use your property.</h2></div>{quoteLink('Request a Quote')}</div><div className="service-grid">{services.map((service)=><article className="service-card" key={service.title}><img src={service.image} alt={`${service.title} example`} loading="lazy" /><div><h3>{service.title}</h3><p>{service.desc}</p><a href="#quote">Get a free estimate <span>→</span></a></div></article>)}</div></div></section>
+      <section className="section services"><div className="wrap"><div className="section-heading"><div><span className="eyebrow dark">Concrete services in Fort Worth</span><h2>Built for the way you use your property.</h2></div>{quoteLink('Request a Quote')}</div><div className="service-grid">{services.map((service)=><article className="service-card" key={service.title}><Image src={service.image} alt={`${service.title} example`} width={900} height={600} unoptimized loading="lazy" /><div><h3>{service.title}</h3><p>{service.desc}</p><a href="#quote">Get a free estimate <span>→</span></a></div></article>)}</div></div></section>
 
       <section className="section why"><div className="wrap why-grid"><div className="why-photo" role="img" aria-label="Concrete construction crew at work"><div className="photo-badge"><b>Fort Worth focused</b><span>Residential & commercial concrete</span></div></div><div><span className="eyebrow dark">Why choose us</span><h2>A straightforward concrete experience.</h2><p className="section-intro">From your first estimate through the final walkthrough, the focus stays on dependable service, clean work, and communication you can follow.</p><div className="benefit-grid">{['Free Estimates','Quality Workmanship','Local Fort Worth Service','Residential & Commercial','Clear Communication','Reliable Scheduling'].map((item,i)=><div className="benefit" key={item}><span>{['$','✓','⌖','⌂','↔','◷'][i]}</span><b>{item}</b></div>)}</div>{quoteLink('Get My Free Estimate')}</div></div></section>
 
@@ -92,7 +100,7 @@ export default function Home() {
 
       <section className="final-cta"><div className="wrap"><span className="eyebrow">Ready to get started?</span><h2>Let&apos;s talk about your concrete project.</h2><p>Request a free estimate today and save 10% with our current offer.</p><div className="cta-row">{quoteLink('Get My Free Estimate')}<a className="button secondary" href={`tel:${PHONE_HREF}`}>Call Now · {PHONE_DISPLAY}</a></div></div></section>
 
-      <footer><div className="wrap footer-grid"><a className="brand light" href="#top"><span className="brand-mark">FW</span><span>FORT WORTH <b>CONCRETE</b></span></a><p>Concrete installation for Fort Worth homes and businesses.</p><div className="social-links"><a href={FACEBOOK_URL} aria-label="Facebook">f</a><a href={INSTAGRAM_URL} aria-label="Instagram">◎</a></div><a className="footer-phone" href={`tel:${PHONE_HREF}`}>{PHONE_DISPLAY}</a></div><div className="wrap footer-bottom"><span>© {new Date().getFullYear()} Fort Worth Concrete</span><span>Facebook and Instagram links are ready for your URLs.</span></div></footer>
+      <footer><div className="wrap footer-grid"><a className="brand footer-brand" href="#top"><Image className="brand-logo footer-logo" src="/fort-worth-concrete-logo.webp" width={225} height={150} alt="Fort Worth Concrete" /></a><p>Concrete installation for Fort Worth homes and businesses.</p><div className="social-links"><a href={FACEBOOK_URL} aria-label="Facebook">f</a><a href={INSTAGRAM_URL} aria-label="Instagram">◎</a></div><a className="footer-phone" href={`tel:${PHONE_HREF}`}>{PHONE_DISPLAY}</a></div><div className="wrap footer-bottom"><span>© {new Date().getFullYear()} Fort Worth Concrete</span><span>Facebook and Instagram links are ready for your URLs.</span></div></footer>
 
       <div className="mobile-sticky"><a href={`tel:${PHONE_HREF}`}>Call Now</a><a href="#quote">Free Quote</a></div>
     </main>
@@ -100,5 +108,5 @@ export default function Home() {
 }
 
 function Choice({title,name,options,value,onChange}:{title:string;name:string;options:string[];value:string;onChange:(v:string)=>void}) {
-  return <fieldset className="choice-group"><legend>{title}</legend><div className="choice-grid">{options.map(option=><label className={`choice ${value===option?'selected':''}`} key={option}><input type="radio" name={name} value={option} checked={value===option} onChange={()=>onChange(option)} /><span>{option}</span></label>)}</div></fieldset>;
+  return <fieldset className="choice-group"><legend>{title}</legend><RadioGroup value={value} name={name} onValueChange={onChange}>{options.map(option=><RadioGroupItem id={`${name}-${option.toLowerCase().replace(/[^a-z0-9]+/g,'-')}`} value={option} label={option} key={option} />)}</RadioGroup></fieldset>;
 }
