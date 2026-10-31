@@ -7,9 +7,9 @@
   },
   "scripts": {
     "dev": "vinext dev",
-    "build": "next build",
+    "build": "next build --webpack",
     "start": "next start",
-    "next:build": "next build",
+    "next:build": "next build --webpack",
     "next:start": "next start",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
     "sites:build": "vinext build",
